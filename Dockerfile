@@ -1,8 +1,6 @@
 FROM node:alpine
 
-ENV PORT 80
 ADD entrypoint.sh /entrypoint.sh
-
 RUN chmod +x /entrypoint.sh \
     && apk add --no-cache git vim \
     && mkdir -p /usr/src/app \
