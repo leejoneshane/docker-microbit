@@ -16,4 +16,4 @@ RUN apk add --no-cache git vim \
 WORKDIR /usr/src/app/pxt-microbit
 EXPOSE 80 3233
 VOLUME ["/usr/src/app"]
-ENTRYPOINT ["pxt", "serve", "-h", "0.0.0.0", "-p", "80","--noBrowser","--rebundle"]
+ENTRYPOINT ["entrypoint.sh"]
