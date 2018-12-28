@@ -9,7 +9,7 @@ docker run -p 80:80 --name microbit -d leejoneshane/microbit
 ```
 If the dev server is running then go to http://docker_host_ip
 
-To use pxt, please read the (documents)[https://makecode.com/cli]. ex: monitor UART
+To use pxt, please read the [documents](https://makecode.com/cli). ex: monitor UART
 ```
 docker exec microbit serial
 ```
