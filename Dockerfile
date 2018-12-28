@@ -1,6 +1,10 @@
 FROM node:alpine
 
-RUN apk add --no-cache git vim \
+ENV PORT 80
+ADD entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh \
+    && apk add --no-cache git vim \
     && mkdir -p /usr/src/app \
     && cd /usr/src/app \
     && git clone https://github.com/microsoft/pxt \
@@ -16,4 +20,4 @@ RUN apk add --no-cache git vim \
 WORKDIR /usr/src/app/pxt-microbit
 EXPOSE 80 3233
 VOLUME ["/usr/src/app"]
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
