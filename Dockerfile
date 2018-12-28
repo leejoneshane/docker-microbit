@@ -9,7 +9,7 @@ RUN chmod +x /entrypoint.sh \
     && cd pxt && npm install && npm run build \
     && cd /usr/src/app \
     && git clone https://github.com/microsoft/pxt-common-packages \
-    && cd pxt-common-package && npm install \
+    && cd pxt-common-packages && npm install \
     && cd /usr/src/app \
     && git clone https://github.com/microsoft/pxt-microbit \
     && cd pxt-microbit && npm install -g pxt && npm install \
