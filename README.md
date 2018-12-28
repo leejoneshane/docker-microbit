@@ -7,4 +7,9 @@ To run the editor, you must mapping tcp 80 port when run the container first tim
 ```
 docker run -p 80:80 --name microbit -d leejoneshane/microbit
 ```
-If the dev server is running then go to http://docker_host_ip/.
+If the dev server is running then go to http://docker_host_ip
+
+To use pxt, please read the (documents)[https://makecode.com/cli]. ex: monitor UART
+```
+docker exec microbit serial
+```
