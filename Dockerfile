@@ -1,4 +1,4 @@
-FROM node:8.9.4
+FROM node:8
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh \
