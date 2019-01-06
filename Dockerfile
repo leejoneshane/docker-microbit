@@ -2,7 +2,7 @@ FROM node:8-alpine
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh \
-    && apk add --no-cache git vim python2 \
+    && apk add --no-cache git vim python2 build-base \
     && mkdir -p /usr/src/app \
     && cd /usr/src/app \
     && git clone https://github.com/microsoft/pxt \
