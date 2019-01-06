@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:8.9.4-alpine
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh \
