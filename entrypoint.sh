@@ -3,5 +3,5 @@
 if [ ! -z "$*" ]; then
     pxt $*
 else
-    pxt serve --noBrowser
+    pxt serve -h 0.0.0.0 -p 80 --noBrowser
 fi
