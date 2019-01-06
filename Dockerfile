@@ -1,8 +1,12 @@
-FROM node:8.9.4-alpine
+FROM node:8.9.4
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh \
-    && apk add --no-cache git vim python2 build-base linux-headers udev \
+    && apt-get update \
+    && apt-get install git python build-essential linux-headers udev \
+    && apt-get clean autoclean \
+    && apt-get autoremove --yes \
+    && rm -rf /var/lib/{apt,dpkg,cache,log}/ \
     && mkdir -p /usr/src/app \
     && cd /usr/src/app \
     && git clone https://github.com/microsoft/pxt \
