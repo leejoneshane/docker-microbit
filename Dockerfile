@@ -23,7 +23,7 @@ RUN chmod +x /entrypoint.sh \
     && npm install \
     && rm -rf node_modules/pxt-core && pxt link ../pxt \
     && rm -rf node_modules/pxt-common-packages && npm link ../pxt-common-packages \
-    && pxt install
+    && pxt npminstallnative
 
 WORKDIR /usr/src/app/pxt-microbit
 EXPOSE 80 3233
