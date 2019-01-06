@@ -16,11 +16,13 @@ RUN chmod +x /entrypoint.sh \
     && cd /usr/src/app \
     && git clone https://github.com/microsoft/pxt-common-packages \
     && cd pxt-common-packages && npm install \
+    && rm -rf node_modules/pxt-core && pxt link ../pxt \
     && cd /usr/src/app \
     && git clone https://github.com/microsoft/pxt-microbit \
     && cd pxt-microbit \
-    && npm link ../pxt && npm link ../pxt-common-packages \
-    && npm install
+    && npm install \
+    && rm -rf node_modules/pxt-core && pxt link ../pxt \
+    && rm -rf node_modules/pxt-common-packages && npm link ../pxt-common-packages  
 
 WORKDIR /usr/src/app/pxt-microbit
 EXPOSE 80 3233
