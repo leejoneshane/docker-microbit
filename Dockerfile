@@ -15,7 +15,7 @@ RUN chmod +x /entrypoint.sh \
     && git clone https://github.com/microsoft/pxt-microbit \
     && cd pxt-microbit \
     && npm link ../pxt && npm link ../pxt-common-packages \
-    && npm install && npm audit fix
+    && npm install
 
 WORKDIR /usr/src/app/pxt-microbit
 EXPOSE 80 3233
