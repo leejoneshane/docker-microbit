@@ -3,5 +3,5 @@
 if [ ! -z "$*" ]; then
     pxt $*
 else
-    pxt serve -noBrowser --rebundle
+    pxt serve --noBrowser
 fi
