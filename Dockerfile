@@ -7,9 +7,7 @@ RUN chmod +x /entrypoint.sh \
     && cd /usr/src/app \
     && git clone https://github.com/microsoft/pxt \
     && cd pxt && npm install && npm run build \
-    && npm install -g pxt \
-    && npm install -g svgo \
-    && svgo svgicons/myicon.svg \    
+    && npm install -g pxt \   
     && cd /usr/src/app \
     && git clone https://github.com/microsoft/pxt-common-packages \
     && cd pxt-common-packages && npm install \
