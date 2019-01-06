@@ -7,14 +7,17 @@ RUN chmod +x /entrypoint.sh \
     && cd /usr/src/app \
     && git clone https://github.com/microsoft/pxt \
     && cd pxt && npm install && npm run build \
+    && npm install -g pxt \
+    && npm install -g svgo \
+    && svgo svgicons/myicon.svg \    
     && cd /usr/src/app \
     && git clone https://github.com/microsoft/pxt-common-packages \
     && cd pxt-common-packages && npm install \
     && cd /usr/src/app \
     && git clone https://github.com/microsoft/pxt-microbit \
-    && cd pxt-microbit && npm install -g pxt && npm install \
+    && cd pxt-microbit \
     && npm link ../pxt && npm link ../pxt-common-packages \
-    && pxt npminstallnative
+    && npm install && pxt npminstallnative
 
 WORKDIR /usr/src/app/pxt-microbit
 EXPOSE 80 3233
