@@ -3,10 +3,11 @@ FROM node:8.9.4
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh \
     && apt-get update \
-    && apt-get install git python build-essential udev \
+    && apt-get install git python build-essential udev apt-utils \
     && apt-get clean autoclean \
     && apt-get autoremove --yes \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/ \
+    && npm i npm@latest -g \
     && mkdir -p /usr/src/app \
     && cd /usr/src/app \
     && git clone https://github.com/microsoft/pxt \
