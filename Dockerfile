@@ -10,13 +10,12 @@ RUN chmod +x /entrypoint.sh \
     && npm install -g npm@latest \
     && git clone https://github.com/microsoft/pxt \
     && cd pxt && npm install && npm run build \
-    && npm install -g pxt \
     && cd .. \
     && git clone https://github.com/microsoft/pxt-common-packages \
     && cd pxt-common-packages && npm install \
     && cd .. \
     && git clone https://github.com/microsoft/pxt-microbit \
-    && cd pxt-microbit && npm install -g pxt && npm install \
+    && cd pxt-microbit && npm install \
     && pxt link ../pxt \
     && pxt link ../pxt-common-packages \
     && pxt npminstallnative
