@@ -1,8 +1,8 @@
-FROM node:alpine
+FROM node
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh \
-    && apk add --no-cache build-base python \
+    && apt-get update && apt-get install -y build-essential libudev-dev python \
     && npm i npm@latest -g \
     && mkdir -p /usr/src/app \
     && cd /usr/src/app \
