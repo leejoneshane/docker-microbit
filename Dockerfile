@@ -5,7 +5,7 @@ RUN chmod +x /entrypoint.sh \
     && npm i npm@latest -g \
     && mkdir -p /usr/src/app \
     && cd /usr/src/app \
-    && npm install -g pxt \   
+    && npm install -g pxt sub \   
     && pxt target microbit \
     && cd node_modules/pxt-microbit \
     && pxt link ../pxt-core \
