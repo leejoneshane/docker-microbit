@@ -9,7 +9,8 @@ RUN chmod +x /entrypoint.sh \
     && pxt target microbit \
     && cd node_modules/pxt-microbit \
     && pxt link ../pxt-core \
-    && pxt link ../pxt-common-packages
+    && pxt link ../pxt-common-packages \
+    && pxt npminstallnative
 
 WORKDIR /usr/src/app
 EXPOSE 80
