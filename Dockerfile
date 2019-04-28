@@ -15,7 +15,7 @@ RUN chmod +x /entrypoint.sh \
     && cd pxt-common-packages && npm install \
     && cd .. \
     && git clone https://github.com/microsoft/pxt-microbit \
-    && cd pxt-microbit && npm install \
+    && cd pxt-microbit && npm install -g pxt && npm install \
     && pxt link ../pxt \
     && pxt link ../pxt-common-packages \
     && pxt npminstallnative
