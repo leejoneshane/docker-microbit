@@ -4,7 +4,7 @@ ENV npm_config_loglevel error
 ADD entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh \
-    && mkdir -p /usr/src/app
+    && mkdir -p /usr/src/app \
     && apt-get update && apt-get install -y build-essential libudev-dev git \
     && apt-get autoremove && apt-get clean \
     && git clone https://github.com/microsoft/pxt \
