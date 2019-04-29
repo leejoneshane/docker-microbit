@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 RUN chmod +x /entrypoint.sh \
     && apt-get update && apt-get install -y build-essential libudev-dev git \
     && apt-get autoremove && apt-get clean \
-    && npm install -g pxt webusb \   
+    && npm install -g pxt \   
     && pxt target microbit \
     && cd node_modules/pxt-microbit \
     && pxt link ../pxt-core \
