@@ -6,7 +6,7 @@ WORKDIR /makecode
 
 RUN chmod +x /entrypoint.sh \
     && apk add --no-cache python eudev-dev linux-headers build-base git \
-    && npm install -g jake typings serialport \
+    && npm install -g jake typings \
     && git clone https://github.com/microsoft/pxt \
     && cd pxt && rm -rf .git \
     && npm install && npm audit fix \
@@ -15,7 +15,7 @@ RUN chmod +x /entrypoint.sh \
     && cd .. \
     && git clone https://github.com/Microsoft/pxt-microbit.git \
     && cd pxt-microbit && rm -rf .git \
-    && npm install \
+    && npm install serialport && npm install \
     && npm link ../pxt && npm audit fix
 
 EXPOSE 80
