@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd /makecode/pxt-microbit
+
 if [ ! -z "$*" ]; then
     pxt $*
 else
