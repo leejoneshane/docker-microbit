@@ -2,8 +2,10 @@
 
 cd /makecode/pxt-microbit
 
-if [ ! -z "$*" ]; then
+#if [ ! -z "$*" ]; then
 #    pxt $*
-else
-    pxt serve -h 0.0.0.0 -p 80 --noBrowser
-fi
+#else
+#    pxt serve -h 0.0.0.0 -p 80 --noBrowser
+#fi
+
+exec "$*"
