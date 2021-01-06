@@ -11,7 +11,7 @@ RUN chmod +x /entrypoint.sh \
     && cd pxt-microbit && rm -rf .git \
     && npm install serialport && npm install \
     && npm audit fix --force \
-    && npm build
+    && npm run build
 
 EXPOSE 80
 ENTRYPOINT ["/entrypoint.sh"]
