@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:8-alpine
 
 ENV npm_config_loglevel error
 ADD entrypoint.sh /entrypoint.sh
@@ -10,7 +10,6 @@ RUN chmod +x /entrypoint.sh \
     && git clone https://github.com/Microsoft/pxt-microbit.git \
     && cd pxt-microbit \
     && npm install --save serialport && npm fund \
-    && npm audit fix --force && npm install \
     && npm audit fix --force
     
 EXPOSE 80
