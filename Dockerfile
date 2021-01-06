@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:alpine
 
 ENV npm_config_loglevel error
 ADD entrypoint.sh /entrypoint.sh
