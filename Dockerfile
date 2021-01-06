@@ -5,13 +5,12 @@ ADD entrypoint.sh /entrypoint.sh
 WORKDIR /makecode
 
 RUN chmod +x /entrypoint.sh \
-    && apk add --no-cache python eudev-dev linux-headers build-base git \
+    && apk add --no-cache git \
     && npm install -g pxt \
     && git clone https://github.com/Microsoft/pxt-microbit.git \
-    && cd pxt-microbit && rm -rf .git \
+    && cd pxt-microbit \
     && npm install serialport && npm install \
-    && npm audit fix --force \
-    && npm run build
-
+    && npm audit fix --force
+    
 EXPOSE 80
 ENTRYPOINT ["/entrypoint.sh"]
