@@ -10,7 +10,8 @@ RUN chmod +x /entrypoint.sh \
     && git clone https://github.com/Microsoft/pxt-microbit.git \
     && cd pxt-microbit && rm -rf .git \
     && npm install serialport && npm install \
-    && npm audit fix --force
+    && npm audit fix --force \
+    && npm build
 
 EXPOSE 80
 ENTRYPOINT ["/entrypoint.sh"]
