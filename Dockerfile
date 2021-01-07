@@ -1,6 +1,6 @@
-FROM node:10-alpine
+FROM node:12-alpine
 
-ENV npm_config_loglevel error
+ENV NODE_ENV production
 ADD entrypoint.sh /entrypoint.sh
 WORKDIR /makecode
 
