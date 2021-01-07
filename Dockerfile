@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:8-alpine
 
 ADD entrypoint.sh /entrypoint.sh
 WORKDIR /makecode
@@ -10,8 +10,7 @@ RUN chmod +x /entrypoint.sh \
     && npm install -g pxt \
     && npm install \
     && npm install serialport \
-    && npm audit fix \
-    && pxt build
+    && npm audit fix
     
 EXPOSE 80
 ENTRYPOINT ["/entrypoint.sh"]
