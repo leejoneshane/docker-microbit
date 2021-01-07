@@ -10,7 +10,8 @@ RUN chmod +x /entrypoint.sh \
     && npm install -g pxt \
     && npm install \
     && npm install serialport \
-    && npm audit fix
+    && npm audit fix \
+    && pxt build
     
 EXPOSE 80
 ENTRYPOINT ["/entrypoint.sh"]
