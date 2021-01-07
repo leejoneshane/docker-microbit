@@ -1,6 +1,5 @@
 FROM node:10-alpine
 
-ENV NODE_ENV production
 ADD entrypoint.sh /entrypoint.sh
 WORKDIR /makecode
 
@@ -9,8 +8,6 @@ RUN chmod +x /entrypoint.sh \
     && git clone --depth=1 https://github.com/Microsoft/pxt-microbit.git \
     && cd pxt-microbit \
     && npm install -g pxt \
-    && npm install pxt-core \
-    && npm install pxt-common-packages \
     && npm install \
     && npm install serialport \
     && npm audit fix
